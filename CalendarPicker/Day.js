@@ -18,6 +18,8 @@ export default function Day(props) {
     allowRangeSelection,
     hideToday,
     highlightedDays,
+    specialStyleStartDate,
+    specialStyle,
     textStyle,
     minDate,
     maxDate,
@@ -30,6 +32,9 @@ export default function Day(props) {
   let dateOutOfRange = false;
   let daySelectedStyle = {};
   let selectedDayColorStyle = {};
+  let customDayStyle = {};
+  let customDayColorStyle = {};
+  let specialDayStyle = {};
   let dateType;
 
   // First let's check if date is out of range
@@ -47,13 +52,27 @@ export default function Day(props) {
 
   // If date is not out of range let's apply styles
   if (!dateOutOfRange) {
-    // set highlights styles
+  
+    // set highlights & custom styles
     for (var key in highlightedDays){
-      var highlightedDate = new Date(highlightedDays[key]+"T12:00:00Z");
-      if (Utils.compareDates(thisDay,highlightedDate)){
-        daySelectedStyle = styles.highlightedDay;
-        selectedDayColorStyle = styles.highlightedDayLabel;
-      }
+      if (highlightedDays[key].hasOwnProperty('date')){
+	  	var highlightedDate = new Date(highlightedDays[key].date+"T12:00:00Z");
+	  	if (Utils.compareDates(thisDay,highlightedDate)){
+			daySelectedStyle = styles.highlightedDay;
+			selectedDayColorStyle = styles.highlightedDayLabel;
+			if (highlightedDays[key].hasOwnProperty('style')){
+				customDayStyle = highlightedDays[key].style;
+			}
+			if (highlightedDays[key].hasOwnProperty('labelStyle')){
+				customDayColorStyle = highlightedDays[key].labelStyle;
+			}
+	  	}
+	  }
+    }
+    
+    //set special day style (when start day is specified)
+    if (specialStyleStartDate && thisDay >= specialStyleStartDate){
+    	specialDayStyle = specialStyle;
     }
 
     // set today's style
@@ -119,9 +138,9 @@ export default function Day(props) {
   return (
     <View style={styles.dayWrapper}>
       <TouchableOpacity
-        style={[styles.dayButton, daySelectedStyle]}
+        style={[styles.dayButton, daySelectedStyle, customDayStyle, specialDayStyle]}
         onPress={() => onPressDay(day) }>
-        <Text style={[styles.dayLabel, textStyle, selectedDayColorStyle]}>
+        <Text style={[styles.dayLabel, textStyle, selectedDayColorStyle, customDayColorStyle]}>
           { day }
         </Text>
       </TouchableOpacity>

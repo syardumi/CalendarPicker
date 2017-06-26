@@ -167,6 +167,8 @@ export default class CalendarPicker extends Component {
       allowRangeSelection,
       hideToday,
       highlightedDays,
+      specialStyleStartDate,
+      specialStyle,
       startFromMonday,
       initialDate,
       minDate,
@@ -210,6 +212,8 @@ export default class CalendarPicker extends Component {
             styles={styles}
             hideToday={hideToday}
             highlightedDays={highlightedDaysArray}
+            specialStyleStartDate={specialStyleStartDate}
+            specialStyle={specialStyle}
             onPressDay={this.handleOnPressDay}
             startFromMonday={startFromMonday}
             allowRangeSelection={allowRangeSelection}
