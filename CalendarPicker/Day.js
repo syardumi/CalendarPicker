@@ -71,7 +71,7 @@ export default function Day(props) {
     }
     
     //set special day style (when start day is specified)
-    if (specialStyleStartDate && thisDay >= specialStyleStartDate){
+    if (specialStyleStartDate && thisDay >= specialStyleStartDate && specialStyleStartDate <= today){
     	specialDayStyle = specialStyle;
     }
 
