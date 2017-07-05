@@ -17,7 +17,7 @@ export default function Weekdays(props) {
       { wd.map((day, key) => {
           return (
             <Text key={key} style={[styles.dayLabels, textStyle]}>
-              {day}
+              {String(day)}
             </Text>
           );
         })

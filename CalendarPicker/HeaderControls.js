@@ -39,7 +39,7 @@ export default function HeaderControls(props) {
       </View>
       <View>
         <Text style={[styles.monthLabel, textStyle]}>
-           { month } { year }
+           { month } { String(year) }
         </Text>
       </View>
       <View style={styles.monthSelector}>

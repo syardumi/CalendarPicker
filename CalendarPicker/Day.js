@@ -129,7 +129,7 @@ export default function Day(props) {
     return (
       <View style={styles.dayWrapper}>
         <Text style={[textStyle, styles.disabledText]}>
-          { day }
+          { String(day) }
         </Text>
       </View>
     )
@@ -141,7 +141,7 @@ export default function Day(props) {
         style={[styles.dayButton, daySelectedStyle, customDayStyle, specialDayStyle]}
         onPress={() => onPressDay(day) }>
         <Text style={[styles.dayLabel, textStyle, selectedDayColorStyle, customDayColorStyle]}>
-          { day }
+          { String(day) }
         </Text>
       </TouchableOpacity>
     </View>
