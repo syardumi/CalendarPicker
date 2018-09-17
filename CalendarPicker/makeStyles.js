@@ -23,23 +23,16 @@ export function makeStyles(scaler, backgroundColor, textColor, highlightBgColor,
     },
 
     dayButton: {
-      width: 50*scaler,
-      height: 40*scaler,
-      alignSelf: 'center'
-    },
-
-    dayButtonSelected: {
       width: 30*scaler,
       height: 30*scaler,
-      borderRadius: 15*scaler,
-      backgroundColor: SELECTED_BG_COLOR,
-      alignSelf: 'center'
+      borderRadius: 30*scaler,
+      alignSelf: 'center',
+      justifyContent: 'center'
     },
 
     dayLabel: {
       fontSize: 14*scaler,
       color: '#000',
-      marginTop: 6*scaler,
       alignSelf: 'center'
     },
 
@@ -62,18 +55,19 @@ export function makeStyles(scaler, backgroundColor, textColor, highlightBgColor,
 
     dayLabelsWrapper: {
       flexDirection: 'row',
-      marginBottom: 10*scaler,
       borderBottomWidth: 1,
       borderTopWidth: 1,
       paddingTop: 10*scaler,
       paddingBottom: 10*scaler,
       alignSelf: 'center',
+      justifyContent: 'center',
       backgroundColor: 'rgba(0,0,0,0.0)',
       borderColor: 'rgba(0,0,0,0.2)'
     },
 
     daysWrapper: {
-      alignSelf: 'center'
+      alignSelf: 'center',
+      justifyContent: 'center'
     },
 
     dayLabels: {
@@ -86,10 +80,13 @@ export function makeStyles(scaler, backgroundColor, textColor, highlightBgColor,
     selectedDay: {
       width: 30*scaler,
       height:30*scaler,
-      backgroundColor: SELECTED_BG_COLOR,
       borderRadius: 30*scaler,
-      marginTop: -10*scaler,
-      alignSelf: 'center'
+      alignSelf: 'center',
+      justifyContent: 'center'
+    },
+
+    selectedDayBackground: {
+      backgroundColor: SELECTED_BG_COLOR,
     },
 
     selectedToday: {
@@ -97,8 +94,8 @@ export function makeStyles(scaler, backgroundColor, textColor, highlightBgColor,
       height:30*scaler,
       backgroundColor: TODAY_BG_COLOR,
       borderRadius: 30*scaler,
-      marginTop: -10*scaler,
-      alignSelf: 'center'
+      alignSelf: 'center',
+      justifyContent: 'center'
     },
 
     dayWrapper: {
@@ -115,8 +112,8 @@ export function makeStyles(scaler, backgroundColor, textColor, highlightBgColor,
       borderTopLeftRadius: 20*scaler,
       borderBottomLeftRadius: 20*scaler,
       backgroundColor: SELECTED_BG_COLOR,
-      marginTop: -10*scaler,
       alignSelf: 'center',
+      justifyContent: 'center'
     },
 
     endDayWrapper: {
@@ -125,21 +122,22 @@ export function makeStyles(scaler, backgroundColor, textColor, highlightBgColor,
       borderTopRightRadius: 20*scaler,
       borderBottomRightRadius: 20*scaler,
       backgroundColor: SELECTED_BG_COLOR,
-      marginTop: -10*scaler,
       alignSelf: 'center',
+      justifyContent: 'center'
     },
 
     inRangeDay: {
       width: 50*scaler,
       height: 30*scaler,
       backgroundColor: SELECTED_BG_COLOR,
-      marginTop: -10*scaler,
       alignSelf: 'center',
+      justifyContent: 'center'
     },
 
     monthLabel: {
       fontSize: 16*scaler,
       color: '#000',
+      marginBottom: 10*scaler,
       width: 180*scaler,
       textAlign: 'center'
     },
@@ -148,24 +146,23 @@ export function makeStyles(scaler, backgroundColor, textColor, highlightBgColor,
       alignItems: 'center',
       flexDirection: 'row',
       alignSelf: 'center',
-      marginBottom: 10*scaler,
       padding: 5*scaler,
       paddingBottom: 3*scaler,
       backgroundColor: 'rgba(0,0,0,0.0)'
     },
 
     monthSelector: {
+      marginBottom: 10*scaler,
+      fontSize: 14*scaler,
       width: 80*scaler
     },
 
     prev: {
-      textAlign: 'left',
-      fontSize: 14*scaler
+      textAlign: 'left'
     },
 
     next: {
-      textAlign: 'right',
-      fontSize: 14*scaler
+      textAlign: 'right'
     },
 
     yearLabel: {
@@ -186,8 +183,8 @@ export function makeStyles(scaler, backgroundColor, textColor, highlightBgColor,
     disabledText: {
       fontSize: 14*scaler,
       color: '#BBBBBB',
-      marginTop: -10,
-      alignSelf: 'center'
+      alignSelf: 'center',
+      justifyContent: 'center'
     }
   };
 }

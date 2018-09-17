@@ -1,15 +1,15 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import {
   View,
   Text,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import { Utils } from './Utils';
 import Controls from './Controls';
 
 export default function HeaderControls(props) {
   const {
     styles,
-    initialDate,
     currentMonth,
     currentYear,
     onPressNext,
@@ -29,33 +29,28 @@ export default function HeaderControls(props) {
 
   return (
     <View style={styles.headerWrapper}>
-      <View style={styles.monthSelector}>
-        <Controls
-          label={previous}
-          onPressControl={onPressPrevious}
-          styles={styles.prev}
-          textStyles={textStyle}
-        />
-      </View>
+      <Controls
+        label={previous}
+        onPressControl={onPressPrevious}
+        styles={[styles.monthSelector, styles.prev]}
+        textStyles={textStyle}
+      />
       <View>
         <Text style={[styles.monthLabel, textStyle]}>
            { month } { String(year) }
         </Text>
       </View>
-      <View style={styles.monthSelector}>
-        <Controls
-          label={next}
-          onPressControl={onPressNext}
-          styles={styles.next}
-          textStyles={textStyle}
-        />
-      </View>
+      <Controls
+        label={next}
+        onPressControl={onPressNext}
+        styles={[styles.monthSelector, styles.next]}
+        textStyles={textStyle}
+      />
     </View>
   );
 }
 
 HeaderControls.propTypes = {
-  initialDate: PropTypes.instanceOf(Date),
   currentMonth: PropTypes.number,
   currentYear: PropTypes.number,
   onPressNext: PropTypes.func,

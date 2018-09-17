@@ -1,18 +1,23 @@
 {
   "name": "react-native-calendar-picker",
-  "version": "5.7.0",
+  "version": "5.22.0",
   "description": "Calendar Picker Component for React Native",
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "devDependencies": {
-    "expo": "^15.1.0",
-    "jest-expo": "^0.3.0",
+    "babel-jest": "^22.4.3",
+    "jest": "^22.4.3",
+    "moment": "*",
     "react": "~15.4.0",
     "react-native": "0.42.3",
     "react-native-scripts": "0.0.25",
-    "react-test-renderer": "~15.4.1",
-    "uuid": "^3.0.1"
+    "react-test-renderer": "~15.4.1"
   },
   "peerDependencies": {
-    "babel-preset-expo": "^1.0.1"
+    "moment": "*",
+    "react": "*",
+    "react-native": "*"
   },
   "main": "./CalendarPicker",
   "scripts": {
@@ -20,10 +25,11 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
+    "test": "node_modules/jest/bin/jest.js",
+    "test:watch": "node_modules/jest/bin/jest.js --watch"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "react-native"
   },
   "repository": {
     "type": "git",
@@ -48,19 +54,6 @@
     "url": "https://github.com/stephy/CalendarPicker/issues"
   },
   "homepage": "https://github.com/stephy/CalendarPicker",
-  "_id": "react-native-calendar-picker@1.0.1",
-  "_shasum": "af3196fdbb105fbcec26887dbf56a783a5eb1130",
-  "_from": "react-native-calendar-picker@*",
-  "_npmVersion": "2.7.5",
-  "_nodeVersion": "0.11.13-pre",
-  "_npmUser": {
-    "name": "stephy",
-    "email": "alves@stephanimoroni.com"
-  },
-  "dist": {
-    "shasum": "af3196fdbb105fbcec26887dbf56a783a5eb1130",
-    "tarball": "http://registry.npmjs.org/react-native-calendar-picker/-/react-native-calendar-picker-1.0.1.tgz"
-  },
   "maintainers": [
     {
       "name": "stephy",
@@ -68,7 +61,8 @@
     }
   ],
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/react-native-calendar-picker/-/react-native-calendar-picker-1.0.1.tgz",
   "dependencies": {
+    "prop-types": "^15.6.0",
+    "uuid": "3.2.1"
   }
 }
